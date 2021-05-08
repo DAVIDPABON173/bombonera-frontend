@@ -1,1 +1,36 @@
-<p>crear-alquiler works!</p>
+<div class="row col-12 ">
+    <div class="card col-md-8 mx-auto">
+        <h5 class="card-header text-center">NUEVO ALQUILER</h5>
+        <div class="card-body">
+          <h5 class="card-title">Ingresa los datos del nuevo alquiler</h5>
+            <form [formGroup]="alquilerForm" (ngSubmit)="crearAlquiler()">
+              <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="documento">Documento</label>
+                    <input type="text" validar class="form-control" id="documento" formControlName="documento">
+                    <small id="documentoSmall" class="form-text text-muted">Número de documento del cliente</small>
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label for="fechaAlquiler">Fecha alquiler</label>
+                      <input type="date" validar class="form-control" id="fechaAlquiler" formControlName="fechaAlquiler">
+                      <small id="fechaAlquilerSmall" class="form-text text-muted">Ingrese la fecha para la cual desea realizar el alquiler</small>
+                  </div>
+              </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label for="horaInicio">Hora inicio</label>
+                    <input type="time" validar class="form-control" id="horaInicio" formControlName="horaInicio">
+                    <small id="horaInicioSmall" class="form-text text-muted">Ingrese la hora inicio</small>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="horaFin">Hora fin</label>
+                    <input type="time" validar class="form-control" id="horaFin" formControlName="horaFin">
+                    <small id="horaFinSmall" class="form-text text-muted">Ingrese la hora fin</small>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary float-sm-right" [disabled]="!alquilerForm.valid">Registrar</button>
+          </form>
+        </div>
+      </div>      
+</div>

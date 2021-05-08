@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Alquiler } from '@alquiler/shared/model/alquiler';
+import { AlquilerService } from '@alquiler/shared/service/alquiler.service';
+import { Respuesta } from '@shared/components/respuesta/model/respuesta';
+import { RespuestaService } from '@shared/components/respuesta/service/respuesta.service';
 
 @Component({
   selector: 'app-listar-alquiler',
@@ -7,9 +11,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarAlquilerComponent implements OnInit {
 
-  constructor() { }
+  constructor(private alquilerService: AlquilerService, private respuestaService: RespuestaService) { }
 
+  alquileres: Alquiler[] = [];
+
+  alquiler: Alquiler;
+  respuesta: Respuesta;
   ngOnInit(): void {
+    this.listarAlquileres();
+  }
+
+  listarAlquileres(): void {
+    this.alquilerService.listar().subscribe(
+      response => {
+        this.alquileres = response;
+
+        if(this.alquileres.length == 0) {
+          this.respuesta = new Respuesta('Opss...', 'Sin resultados.', false);
+          this.respuestaService.emite(this.respuesta);
+        }
+        
+      });
+  }
+
+  cancelarAlquiler(id: number): void {
+    this.alquilerService.cancelar(id).subscribe(
+      response => {
+          this.respuesta = new Respuesta('Opss...', response['valor'], true);
+          this.respuestaService.emite(this.respuesta);
+        this.listarAlquileres();
+      });
   }
 
 }
