@@ -9,6 +9,7 @@ import { ListarAlquilerComponent } from './components/listar-alquiler/listar-alq
 import { AlquilerService } from './shared/service/alquiler.service';
 
 import { DatePipe } from '@angular/common';
+import { EliminarAlquilerComponent } from './components/eliminar-alquiler/eliminar-alquiler.component';
 
 
 
@@ -16,7 +17,8 @@ import { DatePipe } from '@angular/common';
   declarations: [
     AlquilerComponent,
     CrearAlquilerComponent,
-    ListarAlquilerComponent
+    ListarAlquilerComponent,
+    EliminarAlquilerComponent
   ],
   imports: [
     SharedModule,

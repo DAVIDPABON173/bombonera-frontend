@@ -34,13 +34,8 @@ export class ListarAlquilerComponent implements OnInit {
       });
   }
 
-  cancelarAlquiler(id: number): void {
-    this.alquilerService.cancelar(id).subscribe(
-      response => {
-          this.respuesta = new Respuesta('Opss...', response['valor'], true);
-          this.respuestaService.emite(this.respuesta);
-        this.listarAlquileres();
-      });
+  onAlquilerEliminado(){
+    this.listarAlquileres();
   }
-
+  
 }

@@ -29,7 +29,7 @@ export class CrearAlquilerComponent implements OnInit {
         this.respuestaService.emite(this.respuesta);
       },
       error => {
-        this.respuesta = new Respuesta('Opss...', error['valor'], false);
+        this.respuesta = new Respuesta('Opss...', error.error.mensaje, false);
         this.respuestaService.emite(this.respuesta);
       }
     )

@@ -4,9 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Alquiler } from '../model/alquiler';
 import { DatePipe } from '@angular/common';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AlquilerService {
 
 
@@ -24,15 +22,14 @@ export class AlquilerService {
   }
 
   public crear(alquiler: Alquiler) {
-    let formattedDate = this.datepipe.transform(new Date(), 'YYYY-MM-dd HH:mm:ss')
-    console.log("formattedDate: " + formattedDate.toString());
+    let formattedDate = this.datepipe.transform(new Date(), 'YYYY-MM-dd HH:mm:ss');
     alquiler.fechaSolicitud = formattedDate.toString();
-    return this.http.doPost<Alquiler, boolean>(`${environment.endpoint}${this.URL_ALQUILER}`, alquiler,
+    return this.http.doPost<Alquiler, object>(`${environment.endpoint}${this.URL_ALQUILER}`, alquiler,
                                                 this.http.optsName('crear alquiler'));
   }
 
-  public cancelar(alquiler_id: number) {
-    return this.http.doDelete<boolean>(`${environment.endpoint}/alquiler/${alquiler_id}`,
+  public cancelar(alquiler: Alquiler) {
+    return this.http.doDelete<object>(`${environment.endpoint}/alquiler/${alquiler.id}`,
                                                  this.http.optsName('cancelar alquiler'));
   }
 }

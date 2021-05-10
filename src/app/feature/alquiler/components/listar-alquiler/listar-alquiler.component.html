@@ -38,13 +38,9 @@
               <td>{{ alquiler.horaFin }}</td>
               <td>{{ alquiler.valorPagado }}</td>
               <td>
-                <button
-                  type="button"
-                  class="btn btn-danger"
-                  (click)="cancelarAlquiler(alquiler.id)"
-                >
-                  Cancelar Alquiler
-                </button>
+               <app-eliminar-alquiler [alquiler] = "alquiler"
+                (alquilerEliminado)="onAlquilerEliminado()">
+               </app-eliminar-alquiler>
               </td>
             </tr>
           </tbody>

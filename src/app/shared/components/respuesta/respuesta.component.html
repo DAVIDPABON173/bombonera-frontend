@@ -1,17 +1,14 @@
 <div class="container">
   <div
     id="respuesta"
-    class="alert {{ claseTipoAlerta }} alert-dismissible fade show {{
-      classHide
-    }}"
-    role="alert"
-  >
-    <h5 id="encabezadoRespuesta" class="alert-heading">
-      {{ respuesta.encabezado }}
-    </h5>
+    class="alert {{ claseTipoAlerta }} alert-dismissible fade show {{classHide}}"
+    role="alert">
+    <h5 id="encabezadoRespuesta" class="alert-heading">{{ respuesta.encabezado }}</h5>
     <p id="cuerpoRespuesta">{{ respuesta.cuerpo }}</p>
     <button type="button" class="close" (click)="ocultarRespuesta()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
 </div>
+
+
