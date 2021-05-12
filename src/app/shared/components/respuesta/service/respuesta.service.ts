@@ -14,12 +14,10 @@ export class RespuestaService {
   });
 
   constructor() { }
-  
 
   public escucha(): Observable<Respuesta> {
     return this.respuesta.asObservable();
   }
-
 
   public emite(msj: Respuesta): void {
       this.respuesta.next(msj);

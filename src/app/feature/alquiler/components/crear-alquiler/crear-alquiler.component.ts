@@ -25,14 +25,15 @@ export class CrearAlquilerComponent implements OnInit {
     this.alquilerService.crear(this.alquilerForm.value)
     .subscribe(
       success => {
-        this.respuesta = new Respuesta('Registro exitoso!', 'Alquiler Número: ' + success['valor'], true);
+        const key = 'valor';
+        this.respuesta = new Respuesta('Registro exitoso!', 'Alquiler Número: ' + success[key], true);
         this.respuestaService.emite(this.respuesta);
       },
       error => {
         this.respuesta = new Respuesta('Opss...', error.error.mensaje, false);
         this.respuestaService.emite(this.respuesta);
       }
-    )
+    );
   }
 
   private construirForm(): void{
@@ -44,8 +45,7 @@ export class CrearAlquilerComponent implements OnInit {
       fechaAlquiler: new FormControl('', [Validators.required]),
       horaInicio: new FormControl('', [Validators.required]),
       horaFin: new FormControl('', [Validators.required])
-      
-    })
+    });
   }
 
 }

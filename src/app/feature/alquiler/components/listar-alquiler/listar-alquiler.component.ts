@@ -25,17 +25,14 @@ export class ListarAlquilerComponent implements OnInit {
     this.alquilerService.listar().subscribe(
       response => {
         this.alquileres = response;
-
-        if(this.alquileres.length == 0) {
+        if (this.alquileres.length === 0) {
           this.respuesta = new Respuesta('Opss...', 'Sin resultados.', false);
           this.respuestaService.emite(this.respuesta);
         }
-        
       });
   }
 
   onAlquilerEliminado(){
     this.listarAlquileres();
   }
-  
 }

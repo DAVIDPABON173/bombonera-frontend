@@ -24,9 +24,10 @@ export class EliminarAlquilerComponent implements OnInit {
   cancelarAlquiler(): void {
     this.alquilerService.cancelar(this.alquiler).subscribe(
       response => {
-          this.respuesta = new Respuesta('Cancelado!', response['valor'], true);
-          this.respuestaService.emite(this.respuesta);
-          this.alquilerEliminado.emit(true);
+        const key = 'valor';
+        this.respuesta = new Respuesta('Cancelado!', response[key], true);
+        this.respuestaService.emite(this.respuesta);
+        this.alquilerEliminado.emit(true);
       }
       );
   }

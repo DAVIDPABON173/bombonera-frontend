@@ -16,8 +16,8 @@ describe('AlquilerService', () => {
     const injector = TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       providers: [AlquilerService, HttpService]
-    });
-    httpMock = injector.inject(HttpTestingController)
+     });
+    httpMock = injector.inject(HttpTestingController);
     service = TestBed.inject(AlquilerService);
   });
 
@@ -27,14 +27,13 @@ describe('AlquilerService', () => {
     // Assert
     expect(alquilerService).toBeTruthy();
   });
-
-  
   it('debería listar todos los registros de alquiler', () => {
     // Arrange
     const dummyAlquileres = [
-      new Alquiler(1, '12345', '2021-05-10 10:11:00','2021-05-10', '06:00', '08:00', 180000),
-      new Alquiler(2, '12345', '2021-05-10 11:00:00','2021-05-10', '08:00', '10:00', 270000)
+      new Alquiler(1, '12345', '2021-05-10 10:11:00', '2021-05-10', '06:00', '08:00', 180000),
+      new Alquiler(2, '12345', '2021-05-10 11:00:00', '2021-05-10', '08:00', '10:00', 270000)
     ];
+
     service.listar().subscribe(response => {
       expect(response.length).toBe(2);
       expect(response).toEqual(dummyAlquileres);
@@ -46,13 +45,13 @@ describe('AlquilerService', () => {
 
   it('debería crear un alquiler', () => {
     // Arrange
-    const dummyAlquiler = new Alquiler(1, '12345', '2021-05-10 10:11:00','2021-05-10', '06:00', '08:00', 0);
+    const dummyAlquiler = new Alquiler(1, '12345', '2021-05-10 10:11:00', '2021-05-10', '06:00', '08:00', 0);
     const dummyResponse = { valor: 1 };
 
     // Act
     service.crear(dummyAlquiler).subscribe((success) => {
-      // Assert
-      expect(success).toEqual(dummyResponse);
+    // Assert
+    expect(success).toEqual(dummyResponse);
     });
     const request = httpMock.expectOne(ENDPOINT_ALQUILER);
     // Assert
@@ -63,8 +62,8 @@ describe('AlquilerService', () => {
   });
 
   it('debería cancelar un alquiler', () => {
-    const dummyAlquiler = new  Alquiler(1, '12345', '2021-05-10 10:11:00','2021-05-10', '06:00', '08:00', 180000);
-    const dummyResponse = { valor: "Cancelación exitosa!." };
+    const dummyAlquiler = new  Alquiler(1, '12345', '2021-05-10 10:11:00', '2021-05-10', '06:00', '08:00', 180000);
+    const dummyResponse = { valor: 'Cancelación exitosa!.' };
     service.cancelar(dummyAlquiler).subscribe((respuesta) => {
       expect(respuesta).toEqual(dummyResponse);
     });
@@ -78,5 +77,4 @@ describe('AlquilerService', () => {
     TestBed.resetTestingModule();
   });
 
-  
 });

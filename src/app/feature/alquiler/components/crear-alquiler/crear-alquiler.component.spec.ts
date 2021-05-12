@@ -85,8 +85,8 @@ describe('CrearAlquilerComponent', () => {
   it('debería arrojar un mensaje de error al intentar crear un alquiler', () => {
     // Arrange
     const response = {
-      nombreExcepcion: "ExcepcionHorarioNoDisponible",
-      mensaje: "El horario de alquiler solicitado no se encuentra disponible."
+      nombreExcepcion: 'ExcepcionHorarioNoDisponible',
+      mensaje: 'El horario de alquiler solicitado no se encuentra disponible.'
     };
 
     const errorWrapper = { error: response };

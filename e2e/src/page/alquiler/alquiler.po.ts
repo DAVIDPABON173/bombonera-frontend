@@ -3,17 +3,10 @@ import { by, element } from 'protractor';
 export class AlquilerPage{
 
     private linkCrearAlquiler = element(by.id('linkPageCrearAlquiler'));
-    private linkListarAlquiler = 
-    element(by.id('linkPageListarAlquiler'));
+    private linkListarAlquiler = element(by.id('linkPageListarAlquiler'));
 
-    //private listaAlquileres = element.all(by.xpath('/html/body/app-root/app-alquiler/app-listar-alquiler/div/div/div/div/table/tbody/tr'));
     private listaAlquileres = element.all(by.css('app-listar-alquiler table.tbody.tr'));
-    
-    private botonEliminarPrimerAlquiler = element(by.xpath(
-        '/html/body/app-root/app-alquiler/app-listar-alquiler/div/div/div/div/table/tbody/tr[1]/td/app-eliminar-alquiler/button'
-        ));
-        
-
+    private botonEliminarPrimerAlquiler = element(by.xpath('/html/body/app-root/app-alquiler/app-listar-alquiler/div/div/div/div/table/tbody/tr[1]/td/app-eliminar-alquiler/button'));
     private inputDocumento = element(by.id('documento'));
     private inputFechaAlquiler = element(by.id('fechaAlquiler'));
     private inputHoraInicio = element(by.id('horaInicio'));
@@ -48,8 +41,7 @@ export class AlquilerPage{
         await this.inputHoraFin.sendKeys(horaFin);
     }
 
-    async inicializarCrearAlquiler(documento: string = '', fechaAlquiler: string = '', 
-        horaInicio: string = '', horaFin: string = ''){
+    async inicializarCrearAlquiler(documento: string = '', fechaAlquiler: string = '', horaInicio: string = '', horaFin: string = ''){
         await this.ingresarDocumento(documento);
         await this.ingresarFechaAlquiler(fechaAlquiler);
         await this.ingresarHoraInicio(horaInicio);

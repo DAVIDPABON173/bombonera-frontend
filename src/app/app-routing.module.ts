@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, canActivate: [SecurityGuard]  },
   { path: 'alquiler', loadChildren: () => import('@alquiler/alquiler.module').then(mod => mod.AlquilerModule) }
-  
 ];
 
 @NgModule({

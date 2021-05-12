@@ -13,8 +13,8 @@ describe('ListarAlquilerComponent', () => {
   let fixture: ComponentFixture<ListarAlquilerComponent>;
   let alquilerService: AlquilerService;
   const alquileres = [
-    new Alquiler(1, '12345', '2021-05-10 10:11:00','2021-05-10', '06:00', '08:00', 180000),
-    new Alquiler(2, '12345', '2021-05-10 11:00:00','2021-05-10', '08:00', '10:00', 270000)
+    new Alquiler(1, '12345', '2021-05-10 10:11:00', '2021-05-10', '06:00', '08:00', 180000),
+    new Alquiler(2, '12345', '2021-05-10 11:00:00', '2021-05-10', '08:00', '10:00', 270000)
   ];
 
   beforeEach(async () => {

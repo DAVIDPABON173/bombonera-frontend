@@ -41,7 +41,7 @@ describe('EliminarAlquilerComponent', () => {
 
   it('debería llamar el servicio que cancelar un alquiler', () => {
     // Arrange
-    const mensajeFake = "Cancelación exitosa!.";
+    const mensajeFake = 'Cancelación exitosa!.';
     const response = { valor: mensajeFake};
     const spy = spyOn(alquilerService, 'cancelar').and.returnValue(
       of(response)
@@ -54,7 +54,7 @@ describe('EliminarAlquilerComponent', () => {
 
   it('debería cancelar un alquiler y retornar un mensaje sobre aplicacion de descuento', () => {
     // Arrange
-    const mensajeFake = "Cancelación exitosa!.  se aplica devolución del 90% del valor pagado";
+    const mensajeFake = 'Cancelación exitosa!.  se aplica devolución del 90% del valor pagado';
     const response = { valor: mensajeFake};
     spyOn(alquilerService, 'cancelar').and.returnValue(
       of(response)

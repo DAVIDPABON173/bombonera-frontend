@@ -16,8 +16,8 @@ describe('RespuestaComponent', () => {
     fixture = TestBed.createComponent(RespuestaComponent);
     component = fixture.componentInstance;
     component.ngOnInit();
-    component.respuesta.encabezado = "encabezado";
-    component.respuesta.cuerpo = "cuerpo";
+    component.respuesta.encabezado = 'encabezado';
+    component.respuesta.cuerpo = 'cuerpo';
     fixture.detectChanges();
   });
 

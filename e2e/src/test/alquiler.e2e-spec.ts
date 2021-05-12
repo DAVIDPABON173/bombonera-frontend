@@ -1,7 +1,7 @@
-import { AppPage } from "../app.po";
-import { AlquilerPage } from "../page/alquiler/alquiler.po";
-import { NavbarPage } from "../page/navbar/navbar.po";
-import { RespuestaPage } from "../page/respuesta/respuesta.po";
+import { AppPage } from '../app.po';
+import { AlquilerPage } from '../page/alquiler/alquiler.po';
+import { NavbarPage } from '../page/navbar/navbar.po';
+import { RespuestaPage } from '../page/respuesta/respuesta.po';
 
 describe('workspace-project Alquiler', () => {
 
@@ -37,15 +37,11 @@ describe('workspace-project Alquiler', () => {
         await page.navigateTo();
         await navBar.clickBotonAlquiler();
         await alquiler.clickIrACrearAlquiler();
-        await alquiler.inicializarCrearAlquiler('555555', '06-05-2021', '15:00', '18:00');
-        let habilitado = await alquiler.estaHabilitadoBotonCrearAlquiler();
-        expect(habilitado).toBeTruthy();
+        await alquiler.inicializarCrearAlquiler('555555', '08-05-2021', '15:00', '18:00');
+        expect(alquiler.estaHabilitadoBotonCrearAlquiler()).toBeTruthy();
         await alquiler.clickBotonCrearAlquiler();
-        let encabezado = respuesta.getElementDeRespuesta('encabezadoRespuesta');
-        expect(encabezado).toContain('Registro exitoso!');
-        let cuerpo = respuesta.getElementDeRespuesta('cuerpoRespuesta');
-        expect(cuerpo).toContain('Alquiler Número:');
-        
+        expect(respuesta.getElementDeRespuesta('encabezadoRespuesta')).toContain('Registro exitoso!');
+        expect(respuesta.getElementDeRespuesta('cuerpoRespuesta')).toContain('Alquiler Número:');
     });
 
     it('debería cancelar un alquiler', async () => {
@@ -53,8 +49,7 @@ describe('workspace-project Alquiler', () => {
         await navBar.clickBotonAlquiler();
         await alquiler.clickLinkIrAListarAlquiler();
         await alquiler.clickBotonCancelarAlquiler();
-        let encabezado = await respuesta.getElementDeRespuesta('encabezadoRespuesta');
-        expect(encabezado).toContain('Cancelado!');
+        expect(respuesta.getElementDeRespuesta('encabezadoRespuesta')).toContain('Cancelado!');
     });
 
 });
