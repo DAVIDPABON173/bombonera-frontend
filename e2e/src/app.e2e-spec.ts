@@ -8,9 +8,9 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('debería mostrar mensaje de beinvenida', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Angular Seed');
+    expect(page.getTitleText()).toEqual('LA BOMBONERAAlquiler de cancha sintética.');
   });
 
   afterEach(async () => {

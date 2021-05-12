@@ -13,14 +13,8 @@ exports.config = {
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
-  capabilities: {
-    browserName: 'chrome', // Se define Chrome como navegador para las pruebas
-    chromeOptions: {
-      args: [
-        "--headless",
-        "--disable-gpu"
-      ]
-    }
+  capabilities: { // Browser sobre el que se hace el testeo
+    browserName: 'chrome'
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
@@ -28,7 +22,7 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 30000,
-    print: function() {}
+    print: function () { }
   },
   onPrepare() {
     require('ts-node').register({
@@ -37,7 +31,7 @@ exports.config = {
     jasmine.getEnv().addReporter(new SpecReporter({ spec: { displayStacktrace: true } }));
     jasmine.getEnv().addReporter(new HtmlReporter({
       baseDirectory: 'tmp/screenshots'
-   }).getJasmine2Reporter());
-    
+    }).getJasmine2Reporter());
+
   }
 };
