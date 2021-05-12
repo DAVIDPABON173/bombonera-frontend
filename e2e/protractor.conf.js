@@ -14,7 +14,7 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: { // Browser sobre el que se hace el testeo
-    browserName: 'chrome',
+    browserName: 'chrome', // Se define Chrome como navegador para las pruebas
     chromeOptions: {
       args: [
         "--headless",
