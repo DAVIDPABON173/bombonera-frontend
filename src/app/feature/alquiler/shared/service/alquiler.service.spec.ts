@@ -73,8 +73,4 @@ describe('AlquilerService', () => {
     req.event(new HttpResponse<object>({ body: dummyResponse }));
   });
 
-  afterAll(() => {
-    TestBed.resetTestingModule();
-  });
-
 });
