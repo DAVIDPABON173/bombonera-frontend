@@ -14,7 +14,14 @@ exports.config = {
     './src/**/*.e2e-spec.ts'
   ],
   capabilities: { // Browser sobre el que se hace el testeo
-    browserName: 'chrome'
+    browserName: 'chrome',
+    chromeOptions: {
+      args: [
+        "--headless",
+        "--disable-gpu",
+        "--window-size=1280,720"
+      ]
+    }
   },
   directConnect: true,
   baseUrl: 'http://localhost:4200/',
