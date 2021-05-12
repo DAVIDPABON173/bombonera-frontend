@@ -24,7 +24,6 @@ export class AlquilerService {
   public crear(alquiler: Alquiler) {
     let formattedDate = this.datepipe.transform(new Date(), 'YYYY-MM-dd HH:mm:ss');
     alquiler.fechaSolicitud = formattedDate.toString();
-    console.log(alquiler);
     return this.http.doPost<Alquiler, object>(`${environment.endpoint}${this.URL_ALQUILER}`, alquiler,
                                                 this.http.optsName('crear alquiler'));
   }

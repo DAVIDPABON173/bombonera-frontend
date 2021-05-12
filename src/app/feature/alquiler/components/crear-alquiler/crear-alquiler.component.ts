@@ -29,7 +29,6 @@ export class CrearAlquilerComponent implements OnInit {
         this.respuestaService.emite(this.respuesta);
       },
       error => {
-        console.log(error);
         this.respuesta = new Respuesta('Opss...', error.error.mensaje, false);
         this.respuestaService.emite(this.respuesta);
       }
