@@ -1,4 +1,4 @@
-/* import { Alquiler } from '@alquiler/shared/model/alquiler';
+import { Alquiler } from '@alquiler/shared/model/alquiler';
 import { AlquilerService } from '@alquiler/shared/service/alquiler.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
@@ -74,4 +74,4 @@ describe('ListarAlquilerComponent', () => {
   });
 
 });
-*/
+
