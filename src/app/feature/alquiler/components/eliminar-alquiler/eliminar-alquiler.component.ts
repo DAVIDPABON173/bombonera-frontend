@@ -6,8 +6,7 @@ import { RespuestaService } from '@shared/components/respuesta/service/respuesta
 
 @Component({
   selector: 'app-eliminar-alquiler',
-  templateUrl: './eliminar-alquiler.component.html',
-  styleUrls: ['./eliminar-alquiler.component.css']
+  templateUrl: './eliminar-alquiler.component.html'
 })
 export class EliminarAlquilerComponent implements OnInit {
 

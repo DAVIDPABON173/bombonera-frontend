@@ -6,8 +6,7 @@ import { RespuestaService } from '@shared/components/respuesta/service/respuesta
 
 @Component({
   selector: 'app-crear-alquiler',
-  templateUrl: './crear-alquiler.component.html',
-  styleUrls: ['./crear-alquiler.component.css']
+  templateUrl: './crear-alquiler.component.html'
 })
 export class CrearAlquilerComponent implements OnInit {
 
