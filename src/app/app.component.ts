@@ -8,7 +8,7 @@ import { MenuItem } from '@core/modelo/menu-item';
 })
 export class AppComponent {
   title = 'app-base';
-  public companies: MenuItem[] = [
+  public menu: MenuItem[] = [
     { url: '/home', nombre: 'Home' },
     { url: '/alquiler', nombre: 'Alquiler' }
   ];
