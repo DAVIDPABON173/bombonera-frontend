@@ -66,8 +66,4 @@ describe('EliminarAlquilerComponent', () => {
     expect(component.respuesta).toEqual(respuesta);
   });
 
-  afterAll(() => {
-    TestBed.resetTestingModule();
-  });
-
 });
