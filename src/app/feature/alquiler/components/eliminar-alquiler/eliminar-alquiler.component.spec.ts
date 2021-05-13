@@ -1,4 +1,4 @@
-/*import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { EliminarAlquilerComponent } from './eliminar-alquiler.component';
 import {RouterTestingModule} from '@angular/router/testing';
@@ -66,8 +66,4 @@ describe('EliminarAlquilerComponent', () => {
     expect(component.respuesta).toEqual(respuesta);
   });
 
-
-
-
 });
-*/
