@@ -4,6 +4,7 @@ import {FormGroup, FormControl, Validators } from '@angular/forms';
 import { Respuesta } from '@shared/components/respuesta/model/respuesta';
 import { RespuestaService } from '@shared/components/respuesta/service/respuesta.service';
 
+const LONGITUD_MINIMA_PERMITIDA_DOCUMENTO = 5;
 @Component({
   selector: 'app-crear-alquiler',
   templateUrl: './crear-alquiler.component.html'
@@ -25,7 +26,8 @@ export class CrearAlquilerComponent implements OnInit {
     .subscribe(
       success => {
         const key = 'valor';
-        this.respuesta = new Respuesta('Registro exitoso!', 'Alquiler Número: ' + success[key], true);
+        const numero = success[key];
+        this.respuesta = new Respuesta('Registro exitoso!', `Alquiler Número: ${numero}` , true);
         this.respuestaService.emite(this.respuesta);
       },
       error => {
@@ -39,7 +41,7 @@ export class CrearAlquilerComponent implements OnInit {
     this.alquilerForm = new FormGroup({
       documento: new FormControl('', [
         Validators.required,
-        Validators.minLength(5)
+        Validators.minLength(LONGITUD_MINIMA_PERMITIDA_DOCUMENTO)
       ] ),
       fechaAlquiler: new FormControl('', [Validators.required]),
       horaInicio: new FormControl('', [Validators.required]),

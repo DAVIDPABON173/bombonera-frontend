@@ -4,8 +4,7 @@ import { RespuestaService } from './service/respuesta.service';
 
 @Component({
   selector: 'app-respuesta',
-  templateUrl: './respuesta.component.html',
-  styleUrls: ['./respuesta.component.css']
+  templateUrl: './respuesta.component.html'
 })
 export class RespuestaComponent implements OnInit {
 

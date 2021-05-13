@@ -15,7 +15,7 @@
     </div>
     <div class="card-body">
       <div class="table-responsive">
-        <table class="table">
+        <table class="table" *ngIf="alquileres.length > 0" aria-describedby="Lista todos los alquileres creados">
           <thead class="thead-light">
             <tr>
               <th scope="col">#</th>
