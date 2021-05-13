@@ -10,7 +10,6 @@ describe('workspace-project Alquiler', () => {
     let alquiler: AlquilerPage;
     let respuesta: RespuestaPage;
 
-
     beforeEach(() => {
         page = new AppPage();
         navBar = new NavbarPage();
@@ -33,12 +32,20 @@ describe('workspace-project Alquiler', () => {
         expect(alquiler.estaHabilitadoBotonCrearAlquiler()).toBeFalsy();
     });
 
-    it('debería crear un alquiler', async () => {
+    it('debería estar habilitado el boton de Registrar alquiler cuando el formulario es valido', async () => {
         await page.navigateTo();
         await navBar.clickBotonAlquiler();
         await alquiler.clickIrACrearAlquiler();
         await alquiler.inicializarCrearAlquiler('555555', '08-05-2021', '15:00', '18:00');
         expect(alquiler.estaHabilitadoBotonCrearAlquiler()).toBeTruthy();
+    });
+
+    it('debería crear un alquiler', async () => {
+        await page.navigateTo();
+        await navBar.clickBotonAlquiler();
+        await alquiler.clickIrACrearAlquiler();
+        await alquiler.inicializarCrearAlquiler();
+        await alquiler.inicializarCrearAlquiler('555555', '19-05-2021', '15:00', '18:00');
         await alquiler.clickBotonCrearAlquiler();
         expect(respuesta.getElementDeRespuesta('encabezadoRespuesta')).toContain('Registro exitoso!');
         expect(respuesta.getElementDeRespuesta('cuerpoRespuesta')).toContain('Alquiler Número:');

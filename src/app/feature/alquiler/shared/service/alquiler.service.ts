@@ -4,11 +4,13 @@ import { environment } from 'src/environments/environment';
 import { Alquiler } from '../model/alquiler';
 import { DatePipe } from '@angular/common';
 
+const FORMATO_FECHA_SOLICITUD = 'YYYY-MM-dd HH:mm:ss';
+
 @Injectable()
 export class AlquilerService {
 
-  private URL_ALQUILER: string;
   datepipe: DatePipe;
+  private URL_ALQUILER: string;
 
   constructor(protected http: HttpService) {
     this.URL_ALQUILER = '/alquiler';
@@ -21,7 +23,7 @@ export class AlquilerService {
   }
 
   public crear(alquiler: Alquiler) {
-    const formattedDate = this.datepipe.transform(new Date(), 'YYYY-MM-dd HH:mm:ss');
+    const formattedDate = this.datepipe.transform(new Date(), FORMATO_FECHA_SOLICITUD);
     alquiler.fechaSolicitud = formattedDate.toString();
     return this.http.doPost<Alquiler, object>(`${environment.endpoint}${this.URL_ALQUILER}`, alquiler,
                                                 this.http.optsName('crear alquiler'));

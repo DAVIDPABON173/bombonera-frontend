@@ -6,10 +6,10 @@
             <form [formGroup]="alquilerForm" (ngSubmit)="crearAlquiler()">
               <div class="row">
                 <div class="form-group col-md-6">
-                    <label for="documento">Documento</label>
-                    <input type="text" validar class="form-control" id="documento" formControlName="documento">
-                    <small id="documentoSmall" class="form-text text-muted">Número de documento del cliente</small>
-                  </div>
+                  <label for="documento">Documento</label>
+                  <input type="number" validar class="form-control" id="documento" formControlName="documento">
+                  <small id="documentoSmall" class="form-number number-muted">Número de documento del cliente</small>
+                </div>
                   <div class="form-group col-md-6">
                       <label for="fechaAlquiler">Fecha alquiler</label>
                       <input type="date" validar class="form-control" id="fechaAlquiler" formControlName="fechaAlquiler">
