@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing';
+/* import { TestBed } from '@angular/core/testing';
 import { environment } from 'src/environments/environment';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpResponse } from '@angular/common/http';
@@ -74,3 +74,4 @@ describe('AlquilerService', () => {
   });
 
 });
+*/

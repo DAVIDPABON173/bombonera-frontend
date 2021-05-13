@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+/*import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlquilerComponent } from './alquiler.component';
 
@@ -23,3 +23,4 @@ describe('AlquilerComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+*/
