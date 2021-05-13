@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('debería mostrar mensaje de beinvenida', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('LA BOMBONERAAlquiler de cancha sintética.');
+    expect(page.getTitleText()).toContain('LA BOMBONERA');
   });
 
   afterEach(async () => {

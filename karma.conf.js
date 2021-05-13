@@ -48,6 +48,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['ChromeHeadless'],
+    browserNoActivityTimeout: 30000,
     singleRun: false,
     restartOnFileChange: true
   });

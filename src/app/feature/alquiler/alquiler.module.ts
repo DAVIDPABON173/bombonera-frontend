@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { SharedModule } from '@shared/shared.module';
 
 import { AlquilerRoutingModule } from './alquiler-routing.module';
@@ -24,6 +24,7 @@ import { EliminarAlquilerComponent } from './components/eliminar-alquiler/elimin
     SharedModule,
     AlquilerRoutingModule
   ],
-  providers: [AlquilerService, DatePipe]
+  providers: [AlquilerService, DatePipe],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AlquilerModule { }
